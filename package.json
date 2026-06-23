@@ -1,0 +1,31 @@
+{
+  "name": "@suneditor/react",
+  "version": "1.0.0",
+  "description": "Official React component for SunEditor",
+  "author": "Yi JiHong",
+  "license": "MIT",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "homepage": "https://github.com/suneditor/react#readme",
+  "bugs": {
+    "url": "https://github.com/suneditor/react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suneditor/react.git"
+  },
+  "keywords": [
+    "suneditor",
+    "react",
+    "wysiwyg",
+    "wysiwyg-editor",
+    "rich-text-editor",
+    "text-editor",
+    "html-editor",
+    "editor",
+    "react-component",
+    "react-editor"
+  ]
+}
