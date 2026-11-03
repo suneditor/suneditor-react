@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+# Claude Code local files (settings.json and skills are tracked)
+.claude/settings.local.json
+.claude/launch.json
+.claude/worktrees/

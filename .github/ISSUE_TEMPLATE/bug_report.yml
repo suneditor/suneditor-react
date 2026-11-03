@@ -1,0 +1,49 @@
+name: Bug report
+description: The React wrapper does not behave as expected
+labels: ['bug']
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for reporting! If the problem also happens with plain `suneditor.create()` outside React, please file it in the
+              [engine repository](https://github.com/JiHong88/SunEditor/issues/new/choose) instead.
+    - type: input
+      id: versions
+      attributes:
+          label: Versions
+          description: '`@suneditor/react`, `suneditor`, `react`, and the framework (Next.js, Vite, ...) if any'
+          placeholder: '@suneditor/react 1.0.0, suneditor 3.4.1, react 19.1, next 15.5'
+      validations:
+          required: true
+    - type: dropdown
+      id: rendering
+      attributes:
+          label: Rendering
+          options:
+              - Client only (Vite, CRA, ...)
+              - Next.js App Router
+              - Next.js Pages Router
+              - Other SSR framework
+      validations:
+          required: true
+    - type: textarea
+      id: repro
+      attributes:
+          label: Reproduction
+          description: Minimal component code, or a link to a repository / StackBlitz.
+          render: tsx
+      validations:
+          required: true
+    - type: textarea
+      id: expected
+      attributes:
+          label: Expected behavior
+      validations:
+          required: true
+    - type: textarea
+      id: actual
+      attributes:
+          label: Actual behavior
+          description: Include console errors and warnings.
+      validations:
+          required: true
