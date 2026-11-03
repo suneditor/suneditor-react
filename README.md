@@ -1,4 +1,4 @@
-# @suneditor/react
+# @suneditor/suneditor-react
 
 Official React component for [SunEditor](https://github.com/JiHong88/suneditor) 3.
 
@@ -9,13 +9,15 @@ Official React component for [SunEditor](https://github.com/JiHong88/suneditor) 
 ## Install
 
 ```bash
-npm install @suneditor/react suneditor
+npm install @suneditor/suneditor-react suneditor
 ```
+
+Requires `suneditor` 3.4.1 or later (`editor.events` is used to wire the React props).
 
 ## Usage
 
 ```tsx
-import SunEditor from '@suneditor/react';
+import SunEditor from '@suneditor/suneditor-react';
 import 'suneditor/css/editor';
 import 'suneditor/css/contents';
 
@@ -140,7 +142,7 @@ import type {
 	SunEditorOptions,
 	SunEditorFrameOptions,
 	SunEditorEvents,
-} from '@suneditor/react';
+} from '@suneditor/suneditor-react';
 ```
 
 All engine types are also available from `suneditor/types`.

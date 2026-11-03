@@ -1,0 +1,23 @@
+name: Issue Management
+
+# Weekly: labels inactive issues and pull requests `stale` and closes them after a grace period.
+# Items in a milestone are exempt. See .github/scripts/manage-issues.js for the thresholds.
+on:
+    schedule:
+        - cron: '0 0 * * 1'
+    workflow_dispatch:
+
+jobs:
+    manage-issues:
+        runs-on: ubuntu-latest
+        permissions:
+            issues: write
+            pull-requests: write
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+            - run: node .github/scripts/manage-issues.js
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

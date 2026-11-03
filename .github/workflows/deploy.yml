@@ -45,6 +45,10 @@ jobs:
             - if: steps.version.outputs.bumped == 'true'
               run: npm run check
 
+            # Trusted publishing needs npm 11.5.1+; the npm bundled with Node 22 is older.
+            - if: steps.version.outputs.bumped == 'true'
+              run: npm install -g npm@latest
+
             - name: Publish to npm
               if: steps.version.outputs.bumped == 'true'
               run: npm publish --provenance --access public

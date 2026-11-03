@@ -1,6 +1,6 @@
 import { StrictMode, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import SunEditor, { SunEditorGroup, SunEditorRoot, type SunEditorInstance } from '@suneditor/react';
+import SunEditor, { SunEditorGroup, SunEditorRoot, type SunEditorInstance } from '@suneditor/suneditor-react';
 import ko from 'suneditor/langs/ko';
 import 'suneditor/css/editor';
 import 'suneditor/css/contents';
@@ -18,7 +18,7 @@ function App() {
 
 	return (
 		<main style={{ maxWidth: 960, margin: '0 auto', padding: 24, fontFamily: 'sans-serif' }}>
-			<h1>@suneditor/react playground</h1>
+			<h1>@suneditor/suneditor-react playground</h1>
 			<p style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
 				<button onClick={() => setHtml(`<p>Set from outside ${Date.now()}</p>`)}>set value</button>
 				<button onClick={() => setReadOnly((v) => !v)}>readOnly: {String(readOnly)}</button>

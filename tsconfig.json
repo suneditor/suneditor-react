@@ -12,7 +12,7 @@
 		"skipLibCheck": true,
 		"noEmit": true,
 		// The playground imports the package name; resolve it to the source, not to a stale `dist/`.
-		"paths": { "@suneditor/react": ["./src/index.ts"] }
+		"paths": { "@suneditor/suneditor-react": ["./src/index.ts"] }
 	},
 	"include": ["src", "test", "playground", "*.config.ts"]
 }

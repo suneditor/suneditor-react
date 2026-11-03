@@ -6,6 +6,6 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	root: 'playground',
 	plugins: [react()],
-	resolve: { alias: { '@suneditor/react': fileURLToPath(new URL('./src/index.ts', import.meta.url)) } },
+	resolve: { alias: { '@suneditor/suneditor-react': fileURLToPath(new URL('./src/index.ts', import.meta.url)) } },
 	server: { open: true },
 });

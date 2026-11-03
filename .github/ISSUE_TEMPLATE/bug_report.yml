@@ -11,8 +11,8 @@ body:
       id: versions
       attributes:
           label: Versions
-          description: '`@suneditor/react`, `suneditor`, `react`, and the framework (Next.js, Vite, ...) if any'
-          placeholder: '@suneditor/react 1.0.0, suneditor 3.4.1, react 19.1, next 15.5'
+          description: '`@suneditor/suneditor-react`, `suneditor`, `react`, and the framework (Next.js, Vite, ...) if any'
+          placeholder: '@suneditor/suneditor-react 1.0.0, suneditor 3.4.1, react 19.1, next 15.5'
       validations:
           required: true
     - type: dropdown

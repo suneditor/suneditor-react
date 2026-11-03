@@ -1,5 +1,5 @@
 {
-	"name": "@suneditor/react",
+	"name": "@suneditor/suneditor-react",
 	"version": "1.0.0",
 	"description": "Official React component for SunEditor",
 	"author": "Yi JiHong",
@@ -70,13 +70,13 @@
 		"vite": "^8.3.5",
 		"vitest": "^5.0.5"
 	},
-	"homepage": "https://github.com/suneditor/react#readme",
+	"homepage": "https://github.com/suneditor/suneditor-react#readme",
 	"bugs": {
-		"url": "https://github.com/suneditor/react/issues"
+		"url": "https://github.com/suneditor/suneditor-react/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/suneditor/react.git"
+		"url": "git+https://github.com/suneditor/suneditor-react.git"
 	},
 	"keywords": [
 		"suneditor",

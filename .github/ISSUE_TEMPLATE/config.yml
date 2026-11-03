@@ -7,5 +7,5 @@ contact_links:
       url: https://github.com/JiHong88/SunEditor/discussions/categories/q-a
       about: Ask how to configure or integrate SunEditor in Discussions Q&A.
     - name: Report a security vulnerability
-      url: https://github.com/suneditor/react/security/advisories/new
+      url: https://github.com/suneditor/suneditor-react/security/advisories/new
       about: Report vulnerabilities privately. Do not open a public issue.
