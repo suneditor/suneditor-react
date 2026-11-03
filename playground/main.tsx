@@ -1,6 +1,6 @@
 import { StrictMode, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import SunEditor, { type SunEditorInstance } from '@suneditor/react';
+import SunEditor, { SunEditorGroup, SunEditorRoot, type SunEditorInstance } from '@suneditor/react';
 import ko from 'suneditor/langs/ko';
 import 'suneditor/css/editor';
 import 'suneditor/css/contents';
@@ -68,7 +68,52 @@ function App() {
 			)}
 			<h3>state.html</h3>
 			<pre style={{ whiteSpace: 'pre-wrap', background: '#f4f4f4', padding: 8 }}>{html}</pre>
+			<MultiRoot />
 		</main>
+	);
+}
+
+/** Multi-root: one toolbar (in its own element), two roots with other JSX between them. */
+function MultiRoot() {
+	const toolbarRef = useRef<HTMLDivElement>(null);
+	const [header, setHeader] = useState('<p>Header</p>');
+	const [body, setBody] = useState('<p>Body</p>');
+	const [locked, setLocked] = useState(false);
+
+	return (
+		<section style={{ marginTop: 40 }}>
+			<h2>multi-root</h2>
+			<p style={{ display: 'flex', gap: 8 }}>
+				<button onClick={() => setHeader(`<p>Header ${Date.now()}</p>`)}>set header value</button>
+				<button onClick={() => setLocked((v) => !v)}>body readOnly: {String(locked)}</button>
+			</p>
+			<SunEditorGroup
+				options={(se) => ({
+					plugins: [se.plugins.link, se.plugins.list, se.plugins.align],
+					buttonList: [
+						['undo', 'redo'],
+						['bold', 'italic', 'underline'],
+						['align', 'list', 'link'],
+					],
+					toolbar_container: toolbarRef.current,
+				})}
+			>
+				<div ref={toolbarRef} />
+				<h3>Title</h3>
+				<SunEditorRoot name='header' value={header} onChange={setHeader} options={{ height: '80px' }} />
+				<h3>Text</h3>
+				<SunEditorRoot
+					name='body'
+					value={body}
+					onChange={setBody}
+					readOnly={locked}
+					options={{ height: '200px' }}
+				/>
+			</SunEditorGroup>
+			<pre style={{ whiteSpace: 'pre-wrap', background: '#f4f4f4', padding: 8 }}>
+				{JSON.stringify({ header, body }, null, 2)}
+			</pre>
+		</section>
 	);
 }
 

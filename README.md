@@ -93,6 +93,26 @@ const toolbarRef = useRef<HTMLDivElement>(null);
 <SunEditor options={(se) => ({ plugins: [se.plugins.link], toolbar_container: toolbarRef.current })} />
 ```
 
+### Multi-root
+
+One engine instance (toolbar, plugins, events, theme) with several editable areas. Put a `<SunEditorRoot>` per area inside `<SunEditorGroup>`; any other JSX can sit between them. The group renders no element of its own.
+
+```tsx
+const toolbarRef = useRef<HTMLDivElement>(null);
+
+<SunEditorGroup options={(se) => ({ plugins: [se.plugins.link], toolbar_container: toolbarRef.current })}>
+	<div ref={toolbarRef} />
+	<h2>Title</h2>
+	<SunEditorRoot name='header' value={header} onChange={setHeader} options={{ height: '80px' }} />
+	<SunEditorRoot name='body' value={body} onChange={setBody} readOnly={locked} />
+</SunEditorGroup>;
+```
+
+- `name` is the engine `rootKey` (`ref.current.changeFrameContext('body')`, `html.get({ rootKey: 'body' })`).
+- Each root has its own `value` / `onChange`, `readOnly`, `disabled` and frame `options` (`height`, `placeholder`, `iframe`, ...).
+- The engine needs `toolbar_container` for the shared toolbar unless `mode` is `inline` or `balloon`.
+- Roots are collected when the group mounts. The engine cannot add or remove roots later, so change the group's `key` to recreate it with different roots.
+
 ## Props
 
 | Prop                 | Type                                           | Description                                                                                                 |
@@ -112,7 +132,15 @@ To change them later, remount with a different `key` or call `ref.current.resetO
 ## Types
 
 ```ts
-import type { SunEditorProps, SunEditorInstance, SunEditorOptions, SunEditorEvents } from '@suneditor/react';
+import type {
+	SunEditorProps,
+	SunEditorGroupProps,
+	SunEditorRootProps,
+	SunEditorInstance,
+	SunEditorOptions,
+	SunEditorFrameOptions,
+	SunEditorEvents,
+} from '@suneditor/react';
 ```
 
 All engine types are also available from `suneditor/types`.

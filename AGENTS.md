@@ -12,7 +12,8 @@ The whole runtime is `src/SunEditor.tsx`. Engine behavior (options, plugins, con
 - **Git safety:** never `git add`, `commit`, `push`, `stash`, `reset` or `checkout <path>` unless the user asks for it
   in this conversation. For commits follow `.agents/skills/commit/SKILL.md` (approval gate).
 - **Small surface:** do not add a prop that mirrors an engine option. Engine options go through `options` untouched.
-  React-level props are `value` / `onChange`, `readOnly`, `disabled`, `className` / `style` and `ref`. See CONTRIBUTING.md.
+  React-level props are `value` / `onChange`, `readOnly`, `disabled`, `className` / `style` and `ref`, plus `name` on
+  `SunEditorRoot` (the engine `rootKey`). Multi-root is `SunEditorGroup` + `SunEditorRoot`. See CONTRIBUTING.md.
 - **No static engine import in `src/`:** the engine touches `window` at import time. It is loaded with `import('suneditor')`
   inside an effect. Type-only imports are fine.
 - **Generated output:** never edit `dist/`; it is built by `tsup` and is not committed.

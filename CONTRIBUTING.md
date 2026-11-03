@@ -9,7 +9,9 @@ The wrapper deliberately has very few management points:
 
 - Engine options are passed through `options` untouched. **Do not add a prop that mirrors an engine option.**
   New engine options must work without a wrapper release.
-- Only `value` / `onChange`, `readOnly`, `disabled`, `className` / `style` and `ref` are React-level props.
+- Only `value` / `onChange`, `readOnly`, `disabled`, `className` / `style` and `ref` are React-level props, plus `name`
+  on `SunEditorRoot` (the engine `rootKey`). Multi-root is `SunEditorGroup` + `SunEditorRoot`, with the root's `options`
+  being the engine's frame options untouched.
 - The engine is loaded with a dynamic `import('suneditor')` inside an effect because it touches `window` at import time.
   Never add a top-level `import ... from 'suneditor'` to `src/`. Type-only imports are fine.
 - `events` and `theme` are re-synced on every render; everything else is applied once at creation.
