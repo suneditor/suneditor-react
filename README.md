@@ -1,7 +1,7 @@
 <p align="center">
-  <a href="https://suneditor.com" target="_blank">
-    <img src="https://suneditor-files.s3.ap-northeast-2.amazonaws.com/docs/se3_logo_title_flat.svg?v=1" alt="SunEditor" width="280" />
-  </a>
+  <a href="https://suneditor.com" target="_blank"><img src="https://suneditor-files.s3.ap-northeast-2.amazonaws.com/docs/se3_logo_title_flat.svg?v=1" alt="SunEditor" width="280" align="middle" /></a>
+  &nbsp;&nbsp;
+  <a href="https://react.dev" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt="React" width="40" align="middle" /></a>
 </p>
 
 <p align="center"><strong>The official React component for SunEditor 3.</strong><br /><em>TypeScript. Next.js ready. Every engine option passed through.</em></p>

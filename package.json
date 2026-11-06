@@ -1,6 +1,6 @@
 {
 	"name": "@suneditor/suneditor-react",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "Official React component for SunEditor",
 	"author": "Yi JiHong",
 	"license": "MIT",
