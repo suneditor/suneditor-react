@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Entry point for AI coding agents working on `@suneditor/react`. `CLAUDE.md` is an alias of this file.
+Entry point for AI coding agents working on `@suneditor/suneditor-react`. `CLAUDE.md` is an alias of this file.
 
 ## What this repository is
 

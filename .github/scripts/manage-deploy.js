@@ -7,7 +7,7 @@ import path from 'node:path';
 
 const token = process.env.GITHUB_TOKEN;
 const version = process.env.VERSION_NAME;
-const [owner, repo] = (process.env.GITHUB_REPOSITORY || 'suneditor/react').split('/');
+const [owner, repo] = (process.env.GITHUB_REPOSITORY || 'suneditor/suneditor-react').split('/');
 const api = `https://api.github.com/repos/${owner}/${repo}`;
 
 async function gh(method, url, body) {

@@ -104,7 +104,7 @@ function assignRef<T>(ref: Ref<T> | undefined, value: T) {
 /** Misuse warnings. Dev builds only; bundlers inline `process.env.NODE_ENV`, plain browsers have no `process`. */
 function warn(message: string) {
 	if (typeof process !== 'undefined' && process.env.NODE_ENV === 'production') return;
-	console.warn(`[@suneditor/react] ${message}`);
+	console.warn(`[@suneditor/suneditor-react] ${message}`);
 }
 
 /**
@@ -324,7 +324,8 @@ export const SunEditorGroup = forwardRef<SunEditorInstance | null, SunEditorGrou
 					assignRef(assignedRef.current, editor);
 				})
 				.catch((error: unknown) => {
-					if (!cancelled) console.error('[@suneditor/react] Failed to load or create the editor.', error);
+					if (!cancelled)
+						console.error('[@suneditor/suneditor-react] Failed to load or create the editor.', error);
 				});
 
 			return () => {
@@ -333,7 +334,7 @@ export const SunEditorGroup = forwardRef<SunEditorInstance | null, SunEditorGrou
 					try {
 						editor.destroy();
 					} catch (error) {
-						console.error('[@suneditor/react] Failed to destroy the editor.', error);
+						console.error('[@suneditor/suneditor-react] Failed to destroy the editor.', error);
 					}
 				}
 				editor = null;
@@ -373,7 +374,8 @@ export const SunEditorGroup = forwardRef<SunEditorInstance | null, SunEditorGrou
 /** Shared by `<SunEditor>` (no `name`, single root) and `<SunEditorRoot>` (named root of a group). */
 function EditorRoot(props: Omit<SunEditorRootProps, 'name'> & { name?: string }) {
 	const group = useContext(GroupContext);
-	if (!group) throw new Error('[@suneditor/react] <SunEditorRoot> must be rendered inside <SunEditorGroup>.');
+	if (!group)
+		throw new Error('[@suneditor/suneditor-react] <SunEditorRoot> must be rendered inside <SunEditorGroup>.');
 
 	// Everything that is not an editor prop goes to the wrapping <div>.
 	const {

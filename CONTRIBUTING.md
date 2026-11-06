@@ -1,4 +1,4 @@
-# Contributing to @suneditor/react
+# Contributing to @suneditor/suneditor-react
 
 Thanks for helping out. This package is a thin React wrapper around the [SunEditor](https://github.com/JiHong88/suneditor) engine.
 The engine itself (options, plugins, events, rendering) lives in that repository. Please file engine bugs there.
@@ -83,6 +83,9 @@ Releases are published by GitHub Actions from the `release` branch, like the eng
 
 npm publishing uses [trusted publishing](https://docs.npmjs.com/trusted-publishers) (OIDC), so no npm token is stored in the
 repository. The package on npmjs.com must list this repository and the `deploy.yml` workflow as a trusted publisher.
+
+Stale issues and pull requests are handled by `.github/workflows/issue-manager.yml` (weekly), which skips anything in a
+milestone.
 
 ## Agent skills
 

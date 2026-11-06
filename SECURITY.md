@@ -10,7 +10,7 @@
 
 Please do **not** report security issues through public GitHub issues, discussions or pull requests.
 
-- **GitHub private vulnerability reporting (preferred):** [Report a vulnerability](https://github.com/suneditor/react/security/advisories/new)
+- **GitHub private vulnerability reporting (preferred):** [Report a vulnerability](https://github.com/suneditor/suneditor-react/security/advisories/new)
 - **Email:** 0125ses@hanmail.net with the subject `[Security] Brief vulnerability title`
 
 Issues in the editor engine itself (content sanitizing, XSS in rendered HTML, plugins) belong to the

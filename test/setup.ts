@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/vitest';
 import { cleanup } from '@testing-library/react';
-import { afterEach, vi } from 'vitest';
+import { afterEach, beforeAll, vi } from 'vitest';
 
 // Browser APIs the engine uses that jsdom does not implement.
 class ResizeObserverMock {
@@ -44,6 +44,12 @@ if (!Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'innerText')?.get) {
 		},
 	});
 }
+
+// Loading the engine's module graph cold takes over a second on CI runners, longer than `waitFor` allows.
+// Warm it up here so the first test measures the component, not the import.
+beforeAll(async () => {
+	await import('suneditor');
+});
 
 afterEach(() => {
 	cleanup();

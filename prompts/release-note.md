@@ -1,6 +1,6 @@
 # Release note writing rules
 
-Audience: React and Next.js developers who use `@suneditor/react`. Tone: technical, factual, minimal.
+Audience: React and Next.js developers who use `@suneditor/suneditor-react`. Tone: technical, factual, minimal.
 Third person, no "we" or "you", English only, sentence case.
 
 `release-note.md` holds **only the current version**: a single `## <version>` heading followed by the
@@ -27,7 +27,7 @@ Mapping from `changes.md`: `feat` → New Feature, `enhance` → Enhancement, `f
   such as ``(`src/SunEditor`)``, root causes, implementation details and internal identifiers.
 - One sentence per item, one item per line, starting with `*`.
 - Backticks for props, options, methods, packages and code values.
-- Issue references at the end: `[#12](https://github.com/suneditor/react/issues/12)`.
+- Issue references at the end: `[#12](https://github.com/suneditor/suneditor-react/issues/12)`.
   Contributor attribution: `([@username](https://github.com/username))`.
 - Omit empty categories.
 
