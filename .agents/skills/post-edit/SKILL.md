@@ -2,7 +2,7 @@
 name: post-edit
 description: 코드 수정 후 lint, 포맷, 타입, 테스트, 빌드 검증을 실행
 allowed-tools:
-    - Bash
+  - Bash
 ---
 
 Validate the change without touching unrelated work. Read `git status --short` and `git diff` first.

@@ -15,17 +15,17 @@ Steps:
 2. For changes in `src/`, read the matching spec in `test/SunEditor.test.tsx` and check that the changed
    behavior is covered. `playground/` is a manual test app, not a review target unless named.
 3. Analyze for:
-    - Logic bugs (inverted conditions, null access, stale closures in engine callbacks, missing `await`)
-    - Dead code (unreachable branches, unused variables, left-over refs)
-    - Effect lifecycle: every effect that creates, subscribes or assigns cleans up; behavior must hold under
-      React StrictMode (double effect run) and when the engine import resolves after unmount
-    - SSR safety: no `window`/`document`/engine access outside effects; `renderToString` must stay clean
-    - Engine contract: verify a called instance API (`editor.$.ui.*`, `editor.events`, `html.set`, ...)
-      against the engine source in `node_modules/suneditor/src` instead of assuming its timing or shape
-    - Project rules: a new prop that mirrors an engine option, a static `import ... from 'suneditor'` in
-      `src/`, an edit to `dist/`
-    - `changes.md` has an entry for user-facing changes (`prompts/changes-guide.md`)
-      Trace actual callers and cleanup before reporting a violation.
+   - Logic bugs (inverted conditions, null access, stale closures in engine callbacks, missing `await`)
+   - Dead code (unreachable branches, unused variables, left-over refs)
+   - Effect lifecycle: every effect that creates, subscribes or assigns cleans up; behavior must hold under
+     React StrictMode (double effect run) and when the engine import resolves after unmount
+   - SSR safety: no `window`/`document`/engine access outside effects; `renderToString` must stay clean
+   - Engine contract: verify a called instance API (`editor.$.ui.*`, `editor.events`, `html.set`, ...)
+     against the engine source in `node_modules/suneditor/src` instead of assuming its timing or shape
+   - Project rules: a new prop that mirrors an engine option, a static `import ... from 'suneditor'` in
+     `src/`, an edit to `dist/`
+   - `changes.md` has an entry for user-facing changes (`prompts/changes-guide.md`)
+     Trace actual callers and cleanup before reporting a violation.
 4. Report findings with file path and line numbers, each with the triggering scenario and source evidence.
 5. Do NOT fix anything — report only. Let the user decide what to fix.
 

@@ -70,7 +70,7 @@
 		"vite": "^8.3.5",
 		"vitest": "^5.0.5"
 	},
-	"homepage": "https://github.com/suneditor/suneditor-react#readme",
+	"homepage": "https://suneditor.com/react",
 	"bugs": {
 		"url": "https://github.com/suneditor/suneditor-react/issues"
 	},
