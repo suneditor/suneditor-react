@@ -5,9 +5,22 @@ body:
     - type: markdown
       attributes:
           value: |
-              The wrapper intentionally keeps a small API and passes engine options through as-is.
-              Requests for new editor features (buttons, plugins, options) belong to the
-              [engine repository](https://github.com/JiHong88/SunEditor/issues/new/choose).
+              > [!IMPORTANT]
+              > **This repository only covers the React wrapper.** It intentionally keeps a small API and passes engine
+              > options through as-is, so new engine options work without a wrapper release.
+              >
+              > Requests for new editor features (buttons, plugins, options, behavior) filed here **will not be handled here**.
+              > They will be closed and you will be asked to file them again in the
+              > [engine repository](https://github.com/JiHong88/SunEditor/issues/new/choose).
+    - type: checkboxes
+      id: scope
+      attributes:
+          label: Scope
+          options:
+              - label: This is about the wrapper's React API (props, `ref`, lifecycle, SSR), **not** a new editor feature or option.
+                required: true
+              - label: It is not a request for a prop that mirrors an existing engine option (use `options` for those).
+                required: true
     - type: textarea
       id: problem
       attributes:

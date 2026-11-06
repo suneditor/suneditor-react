@@ -5,8 +5,22 @@ body:
     - type: markdown
       attributes:
           value: |
-              Thanks for reporting! If the problem also happens with plain `suneditor.create()` outside React, please file it in the
-              [engine repository](https://github.com/JiHong88/SunEditor/issues/new/choose) instead.
+              > [!IMPORTANT]
+              > **This repository only covers the React wrapper.** It is a thin layer that passes options through to the
+              > [SunEditor](https://github.com/JiHong88/SunEditor) engine and does not change editor behavior.
+              >
+              > Editor bugs (toolbar, plugins, options, content, formatting, rendering) filed here **will not be fixed here**.
+              > They will be closed and you will be asked to file them again in the
+              > [engine repository](https://github.com/JiHong88/SunEditor/issues/new/choose).
+              >
+              > Quick check: does the same problem happen with plain `suneditor.create()` outside React? If yes, it is an engine bug.
+    - type: checkboxes
+      id: scope
+      attributes:
+          label: Scope
+          options:
+              - label: I checked that this does **not** happen with plain `suneditor.create()`. It only happens through the React wrapper (props, `ref`, lifecycle, SSR / Next.js).
+                required: true
     - type: input
       id: versions
       attributes:

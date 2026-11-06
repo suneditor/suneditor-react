@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-    - name: Editor engine bug (options, plugins, content, rendering)
+    - name: Editor bug or feature request → SunEditor repository
       url: https://github.com/JiHong88/SunEditor/issues/new/choose
-      about: Bugs in SunEditor itself belong to the engine repository. This repository only covers the React wrapper.
-    - name: Question / usage help
+      about: Toolbar, plugins, options, content, formatting, rendering. Anything that is not specific to React belongs to the engine repository. Issues like these opened here will be closed.
+    - name: Question / usage help → SunEditor Discussions
       url: https://github.com/JiHong88/SunEditor/discussions/categories/q-a
-      about: Ask how to configure or integrate SunEditor in Discussions Q&A.
+      about: How to configure or integrate SunEditor. Questions are not handled in this repository's issues.
     - name: Report a security vulnerability
       url: https://github.com/suneditor/suneditor-react/security/advisories/new
       about: Report vulnerabilities privately. Do not open a public issue.
